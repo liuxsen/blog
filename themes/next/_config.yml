@@ -115,15 +115,6 @@ scheme: Muse
 #scheme: Gemini
 
 # ---------------------------------------------------------------
-# gitalk Settings
-# ---------------------------------------------------------------
-gitalk:
-  owner: liuxsen
-  repo: blog
-  client_id: 686c38fe85d99d407afe
-  client_secret: d5cdf0bec7c6cafa000310548c17ae3d4baad5fd
-
-# ---------------------------------------------------------------
 # Sidebar Settings
 # ---------------------------------------------------------------
 
@@ -401,16 +392,16 @@ valine:
 # Introduction: https://imsun.net/posts/gitment-introduction/
 # You can get your Github ID from https://api.github.com/users/<Github username>
 gitment:
-  enable: false
+  enable: true
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
-  lazy: false # Comments lazy loading with a button
+  lazy: true # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
-  github_user: # MUST HAVE, Your Github ID
-  github_repo: # MUST HAVE, The repo you use to store Gitment comments
-  client_id: # MUST HAVE, Github client id for the Gitment
-  client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  github_user: liuxsen # MUST HAVE, Your Github ID
+  github_repo: blog # MUST HAVE, The repo you use to store Gitment comments
+  client_id: 081714072c77fe60275e # MUST HAVE, Github client id for the Gitment
+  client_secret: f51627a753ffd1acd00bf791207793cba7a9a42f # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
