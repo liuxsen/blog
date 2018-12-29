@@ -25,7 +25,6 @@ install:
 
 # 执行清缓存，生成网页操作
 script:
-  - git submodule update
   - cp source/images/avatar.png themes/yelee/source/img/avatar.png
   - hexo clean
   - hexo generate
