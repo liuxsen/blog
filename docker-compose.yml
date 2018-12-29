@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: nginx
+    container_name: blog_web
+    tty: true
+    volumes:
+      - ./public:/usr/share/nginx/html
+    ports:
+      - 10082:80
