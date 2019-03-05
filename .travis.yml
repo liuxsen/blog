@@ -10,7 +10,7 @@ branches:
     - master
 before_install:
   - openssl aes-256-cbc -K $encrypted_5335f12e2ec8_key -iv $encrypted_5335f12e2ec8_iv
-    -in aliyun_liuxsen.enc -out ~\/.ssh/aliyun_liuxsen -d
+    -in aliyun_liuxsen.enc -out ~\/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host 101.200.48.138\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - npm install -g hexo-cli
