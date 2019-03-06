@@ -25,7 +25,7 @@ after_script:
   - git config user.email "wyliuxsen.com"
   - sed -i "s/token/${token}/g" ./_config.yml
   - hexo deploy
-  - tar -jcf blog.tar.bz2 ./public # 打包并压缩代码
+  - tar -zcvf blog.tar.gz ./public # 打包并压缩代码
   - ssh liuxsen@101.200.48.138 'mkdir -p /home/liuxsen/www/blog' # 新建目录
   - scp blog.tar.bz2 liuxsen@101.200.48.138:/home/liuxsen/www/blog/
-  - ssh liuxsen@101.200.48.138 'tar -jxf /home/liuxsen/www/blog/blog.tar.bz2 && rm -rf /home/liuxsen/www/blog/blog.tar.bz2 && mv /home/liuxsen/www/blog/public /home/liuxsen/www/blog' # 解压
+  - ssh liuxsen@101.200.48.138 'tar -zxvf /home/liuxsen/www/blog/blog.tar.gz && rm -rf /home/liuxsen/www/blog/blog.tar.gz && mv /home/liuxsen/www/blog/public/* /home/liuxsen/www/blog && rm -r public' # 解压
