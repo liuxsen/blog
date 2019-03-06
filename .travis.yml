@@ -26,6 +26,6 @@ after_script:
   - sed -i "s/token/${token}/g" ./_config.yml
   - hexo deploy
   - tar -jcf blog.tar.bz2 ./public # 打包并压缩代码
-  - ssh liuxsen@101.200.48.138 'mkdir -p blog && mkdir -p temp' # 新建目录
+  - ssh liuxsen@101.200.48.138 'mkdir -p www' # 新建目录
   - scp blog.tar.bz2 liuxsen@101.200.48.138:~/temp
-  - ssh liuxsen@101.200.48.138 'tar -jxf ~/temp/blog.tar.bz2 && mv ~/temp/public ~./blog && rm -rf temp' # 解压
+  - ssh liuxsen@101.200.48.138 'tar -jxf ~/www/blog.tar.bz2 && mv ~/www/public ~/www/blog && rm -rf ~/www/blog.tar.bz2' # 解压
