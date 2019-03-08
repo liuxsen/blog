@@ -173,19 +173,19 @@ usermod -a -G group1,group2 username
 
 **将权限设置为 rwxrwxrwx**
 
-chmod u+rwx,g+rwx,o+rwx test.md
+`chmod u+rwx,g+rwx,o+rwx test.md`
 
-chmod u=rwx,g=rwx,o=rwx test.md
+`chmod u=rwx,g=rwx,o=rwx test.md`
 
 **更改文件所有者，所属组**
 
 将文件的所有者改为 test
 
-chown test hello.md
+`chown test hello.md`
 
 将文件所属组改为test
 
-chgrp test hello.md
+`chgrp test hello.md`
 
 
 
