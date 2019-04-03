@@ -367,4 +367,4 @@ export default function add(num1, num2) {
 ![](../images/82.png)
 增加测试用例
 
-全部覆盖，ok 完工。[demo]()
+全部覆盖，ok 完工。[demo](https://github.com/liuxsen/karma)
