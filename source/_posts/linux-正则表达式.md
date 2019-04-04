@@ -12,7 +12,7 @@ tags: [linux]
 grep --color 'hello'
 ```
 
-![](../images/31.png)
+![](/images/31.png)
 
 > 管道输入方式 管道的符号是 |，管道是 linux 中支持的一种通信机制，作用是将一个程序的输出作为另一个程序的输入
 
@@ -20,7 +20,7 @@ grep --color 'hello'
 ifconfig | grep --color 192
 ```
 
-![](../images/32.png)
+![](/images/32.png)
 
 > 文件方式,grep 命令的第二个参数是可选参数，用于读取指定的文件内容尽心正则模式匹配，以读取指定文件
 
@@ -28,7 +28,7 @@ ifconfig | grep --color 192
 grep --color ''
 ```
 
-![](../images/33.png)
+![](/images/33.png)
 
 2. 元字符、文本字符和转义字符
 
@@ -40,7 +40,7 @@ eg:
 grep --color '[\^\*\&\\]'
 ```
 
-![](../images/34.png)
+![](/images/34.png)
 
 3. 分组
 
@@ -49,7 +49,7 @@ grep --color '[\^\*\&\\]'
 ```sh
 grep --color -E '(root-){3}'
 ```
-![](../images/35.png)
+![](/images/35.png)
 
 
 ## 正则表达式语法规则
