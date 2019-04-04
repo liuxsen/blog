@@ -4,7 +4,7 @@ date: 2019-04-04 10:15:19
 tags: [docker]
 ---
 
-![](../images/2019-04-04-10-24-35.png)
+![](/images/2019-04-04-10-24-35.png)
 
 开发人员一直在努力提高 Docker 的使用率和性能，命令也在不停变化。Docker 命令经常被弃用，或被替换为更新且更有效的命令，本文总结了近年来资深专家最常用的命令列表并给出部分使用方法。
 
@@ -118,14 +118,14 @@ Live Restore Enabled: false
 搜索下载 Docker 镜像
 可以使用 docker search 命令在 Docker Hub 搜索已有镜像：
 
-![](../images/2019-04-04-10-37-03.png)
+![](/images/2019-04-04-10-37-03.png)
 
 以上对 ubuntu 的搜索显示可用镜像、描述和官方状态等信息。如果要下载 ubuntu 镜像，可以使用 docker pull 命令：
-![](../images/2019-04-04-10-37-36.png)
+![](/images/2019-04-04-10-37-36.png)
 
 docker images 命令可详细列出拥有镜像：
 
-![](../images/2019-04-04-10-38-22.png)
+![](/images/2019-04-04-10-38-22.png)
 
 假设下载 NGINX 镜像，可以运行 docker pull 命令：
 
@@ -150,12 +150,12 @@ docker run -p 8080:80 -d nginx
 ```
 
 以上命令将以分离模式启动容器并返回命令行。
-![](../images/2019-04-04-14-13-10.png)
+![](/images/2019-04-04-14-13-10.png)
 
 ## 使用 docker ps 命令列出 Docker 容器
 
 docker ps 命令允许查找正在运行的所有容器：
-![](../images/2019-04-04-14-13-59.png)
+![](/images/2019-04-04-14-13-59.png)
 
 如上显示容器的各种属性，可以看到是从 nginx 镜像创建并显示端口转发信息。CONTAINER ID 和 NAMES 属性需要特别提及，可以使用上述两大属性唯一标识容器。二者都可自动生成，但也可在容器创建过程中为容器命名。
 创建一个名为 my_nginx 的 NGINX 容器：
@@ -166,11 +166,11 @@ $ docker run --name my_nginx -p 8888:80 -d nginx
 
 再次列出所有 Docker 容器：
 
-![](../images/2019-04-04-14-15-40.png)
+![](/images/2019-04-04-14-15-40.png)
 
 请注意，新容器的名称为“my_nginx”。 处理大量容器时，可以使用命名约定，这可以更好得组织容器。
 docker ps 命令仅显示正在运行的容器。如果对上述情况使用 docker info 命令：
-![](../images/2019-04-04-14-16-35.png)
+![](/images/2019-04-04-14-16-35.png)
 
 可以看到有两个容器正在运行，如果一个暂停或已停止，则不会仅使用 docker ps 命令查看这些容器，必须使用 all（ - a）选项：
 
@@ -187,7 +187,7 @@ $ docker stop my_nginx
 my_nginx
 ```
 
-![](../images/2019-04-04-14-18-23.png)
+![](/images/2019-04-04-14-18-23.png)
 
 docker start 容器
 
@@ -196,7 +196,7 @@ $ docker start my_nginx
 my_nginx
 ```
 
-![](../images/2019-04-04-14-19-46.png)
+![](/images/2019-04-04-14-19-46.png)
 
 如果由于某些问题而需重启容器，则可使用 restart 命令，这比单独停止和启动容器速度更快：
 
@@ -219,15 +219,15 @@ $ docker run --name my_ubuntu -it ubuntu:latest bash
 root@a19c770b8621:/#
 ```
 
-![](../images/2019-04-04-14-23-42.png)
+![](/images/2019-04-04-14-23-42.png)
 
 新开一个 shell 窗口，
 
-![](../images/2019-04-04-14-26-29.png)
+![](/images/2019-04-04-14-26-29.png)
 
 使用 docker exec 向容器发出命令。例如，可以直接用命令提示符在 my_ubuntu 容器上运行 ls 命令：
 
-![](../images/2019-04-04-14-27-38.png)
+![](/images/2019-04-04-14-27-38.png)
 
 ## 以分离模式启动容器并使用 docker attach
 
@@ -238,10 +238,10 @@ $ docker run -it -d --name my_ubuntu_2 ubuntu:latest bash
 75b28b7208359137b3e1dc2843387918e28b4c6c4860ef0cdeac79c205f5cbc4
 ```
 
-![](../images/2019-04-04-14-28-53.png)
+![](/images/2019-04-04-14-28-53.png)
 
 使用 docker attach 命令获取 docker exec bash-like 效果：
-![](../images/2019-04-04-14-29-22.png)
+![](/images/2019-04-04-14-29-22.png)
 
 ## 检查 Docker 镜像历史
 
@@ -249,16 +249,16 @@ Docker 社区镜像是分层创建的，可使用 Docker history 命令查看镜
 
 查看 nginx 镜像历史：
 
-![](../images/2019-04-04-14-30-24.png)
+![](/images/2019-04-04-14-30-24.png)
 
 Docker 检查容器
 
 > 可以使用 docker inspect 命令查找有关系统的信息，运行 docker ps 命令列出 Docker 容器：
 
-![](../images/2019-04-04-14-32-53.png)
+![](/images/2019-04-04-14-32-53.png)
 
 该命令将以 JSON 格式提供大量信息，以下是查找容器 IP 地址的技巧：
-![](../images/2019-04-04-14-33-26.png)
+![](/images/2019-04-04-14-33-26.png)
 
 ## 使用 docker cp 将文件从本地复制到容器
 
@@ -268,10 +268,10 @@ NGINX 容器在端口 8080 上运行。因此，如果转到 http：// localhost
 "Welcome to nginx!"
 ```
 
-![](../images/2019-04-04-14-39-15.png)
+![](/images/2019-04-04-14-39-15.png)
 
 使用带有 ls 的 docker exec 命令检查 NGINX 容器中具有 index.html 的文件夹：
-![](../images/2019-04-04-14-40-34.png)
+![](/images/2019-04-04-14-40-34.png)
 
 使用创建的本地文件覆盖容器 index.html 文件：
 
@@ -279,7 +279,7 @@ NGINX 容器在端口 8080 上运行。因此，如果转到 http：// localhost
 docker cp index.html my_nginx:/usr/share/nginx/html/
 ```
 
-![](../images/2019-04-04-14-42-13.png)
+![](/images/2019-04-04-14-42-13.png)
 
 可使用 docker cp 命令在本地计算机和创建容器间移动文件，此方法可用于覆盖配置文件。
 
@@ -287,19 +287,19 @@ docker cp index.html my_nginx:/usr/share/nginx/html/
 
 如果想复制更多“Hello World”容器，必须将当前容器保存为镜像。
 首先，停止容器：
-![](../images/2019-04-04-14-45-06.png)
+![](/images/2019-04-04-14-45-06.png)
 
 使用 docker commit 命令创建新镜像：
-![](../images/2019-04-04-14-46-31.png)
+![](/images/2019-04-04-14-46-31.png)
 
-![](../images/2019-04-04-14-47-09.png)
+![](/images/2019-04-04-14-47-09.png)
 
 如果现在检查，将看到新镜像：
-![](../images/2019-04-04-14-49-53.png)
+![](/images/2019-04-04-14-49-53.png)
 
 可以使用此镜像并启动新 Docker 容器，新创建容器将具有“Hello world”页面，而不是“Welcome NGINX”页面。示例如下：
 
-![](../images/2019-04-04-14-51-55.png)
+![](/images/2019-04-04-14-51-55.png)
 
 ## 删除 Docker 容器和镜像
 
